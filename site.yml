@@ -2,8 +2,6 @@
 - hosts: my_servers
   become: true
   tasks:
-    - name: Create a folder in the home directory
-      ansible.builtin.file:
-        path: /home/azureuser/testFolder
-        state: directory
-        mode: '0755
+    - name: Print OS info
+      ansible.builtin.package:
+        name: apache2
