@@ -2,6 +2,9 @@
 - hosts: my_servers
   become: true
   tasks:
-    - name: Print OS info
-      ansible.builtin.apt:
-        name: apache2
+    - name: Create a folder in the /home/azureuser directory
+      ansible.builtin.file:
+        path: /home/azureuser/semaphorefolder
+        state: directory
+        mode: '0755' 
+      become_user: azureuser 
